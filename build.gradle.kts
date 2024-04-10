@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "me.callahandev"
-version = "1.0-SNAPSHOT"
+version = "0.0.1"
 
 repositories {
     maven("https://jitpack.io")
@@ -12,5 +12,20 @@ repositories {
 }
 
 dependencies {
-
+    //
+}
+publishing {
+    publishing {
+        publications {
+            create<MavenPublication>("mavenJava") {
+                from(components["java"])
+            }
+        }
+        repositories {
+            maven {
+                group = "me.callahandev"
+                version = "0.0.1"
+            }
+        }
+    }
 }
